@@ -9,8 +9,6 @@ formulario.addEventListener('submit', (e) => {
 
   const valoresFormulario = [...formData.entries()];
 
-  //const atracoes = valoresFormulario[1][1].split(',').map(atracao => atracao.trim());
-
   const body = {
     name: valoresFormulario[0][1],
     poster: "N/D",
@@ -19,8 +17,7 @@ formulario.addEventListener('submit', (e) => {
     scheduled: valoresFormulario[3][1],
     number_tickets: valoresFormulario[4][1],
   }
-
-  console.log(body);
+  //console.log(body);
 
   fetch("https://xp41-soundgarden-api.herokuapp.com/events", {
     "method": "POST",
