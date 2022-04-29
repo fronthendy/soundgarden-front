@@ -10,8 +10,9 @@ function listarEventos(evento){
         celulaIndex.innerText = index + 1;
         //inserir data do evento
         const celulaData = inserirLinha.insertCell();
-        const data = new Date(evento.scheduled);
-        celulaData.innerText = `${data.getDate()}/${data.getMonth()}/${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`
+        celulaData.innerText = evento.scheduled
+        // const data = new Date(evento.scheduled);
+        // celulaData.innerText = `${data.getDate()}/${data.getMonth()}/${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`
         //inserir nome do evento
         const celulaNome = inserirLinha.insertCell();
         celulaNome.innerText = evento.name;
@@ -24,7 +25,7 @@ function listarEventos(evento){
         const botaoVerReservas = document.createElement('a');
         botaoVerReservas.innerText = "ver reservas";
         botaoVerReservas.classList.add('btn', 'btn-dark');
-        botaoVerReservas.href = 'reservas.html'
+        botaoVerReservas.href = 'reservas.html?id='+ evento._id
         celulaAcoes.appendChild(botaoVerReservas);
         //botão editar
         const botaoEditar = document.createElement('a');
