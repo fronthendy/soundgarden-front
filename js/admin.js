@@ -10,9 +10,8 @@ function listarEventos(evento){
         celulaIndex.innerText = index + 1;
         //inserir data do evento
         const celulaData = inserirLinha.insertCell();
-        celulaData.innerText = evento.scheduled
-        // const data = new Date(evento.scheduled);
-        // celulaData.innerText = `${data.getDate()}/${data.getMonth()}/${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`
+        const data = new Date(evento.scheduled);
+        celulaData.innerText = `${data.getDate()}/${data.getMonth()}/${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`
         //inserir nome do evento
         const celulaNome = inserirLinha.insertCell();
         celulaNome.innerText = evento.name;
